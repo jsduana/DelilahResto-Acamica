@@ -1,0 +1,30 @@
+{
+  "name": "delilahresto-acamica",
+  "version": "1.0.0",
+  "description": "Proyecto Delilah Restó para la cursada DWFS de Acámica",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsduana/DelilahResto-Acamica.git"
+  },
+  "keywords": [
+    "delilah",
+    "resto",
+    "backend",
+    "acamica",
+    "DWFS",
+    "node",
+    "nodejs",
+    "express"
+  ],
+  "author": "Juan Sebastian Duana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsduana/DelilahResto-Acamica/issues"
+  },
+  "homepage": "https://github.com/jsduana/DelilahResto-Acamica#readme"
+}
