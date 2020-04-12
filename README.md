@@ -24,7 +24,7 @@ El objetivo del trabajo es generar el backend de una app de pedidos de comida ll
 
 ## Instalación
 
-### 1 - Clonar proyecto
+### 1- Clonar proyecto
 
 Clonar el repositorio desde el [siguiente link](https://github.com/jsduana/DelilahResto-Acamica).
 
@@ -43,3 +43,32 @@ npm install
 ```  
   
 -Asegurarse que todos los comandos sean hechos con la carpeta raíz del proyecto como current directory 
+
+### 4- XAMPP:
+El proyecto también requiere tener instalado XAMPP o algún otro sistema de gestión de base de datos MySQL. Se lo puede descargar e instalar en [https://www.apachefriends.org/es/index.html](https://www.apachefriends.org/es/index.html).  
+
+En XAMPP se debe tener activado los módulos Apache y MySQL para poder realizar operaciones con la base de datos. De tener otro sistema realizar una acción equivalente.  
+  
+### 5- Configuración datos de conexión con la base de datos:  
+Entrando al archivo **db_connection_data.js** dentro de **database** se pueden observar las siguientes variables para la configuración de la conexión:
+
+
+```json
+conf_db_name  : 'delilah_resto',  // database name
+conf_user     : 'root',           // user name
+conf_password : '',               // password
+conf_port     : '3306',           // port number
+```
+
+Los valores de estas variables pueden ser modificados de ser necesario.
+
+### 6- Instalación de base de datos:  
+
+- Abrir el panel de control del servicio MySQL
+- Abrir el archivo en `/database/queries.sql` y dentro del `panel de control` de la base de datos ejecutar la serie de queries del archivo o importar el mismo.
+
+### 7 - Iniciando el servidor
+
+Abrir el archivo en `/server/server.js` desde node
+
+`node server`
