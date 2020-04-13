@@ -63,9 +63,36 @@ conf_port     : '3306',           // port number
 Los valores de estas variables pueden ser modificados de ser necesario.
 
 ### 6- Instalación de base de datos:  
+#### 6.0-Comando para crear la estructura de la base de datos y tablas: 
 
-- Abrir el panel de control del servicio MySQL
-- Abrir el archivo en `/database/queries.sql` y dentro del `panel de control` de la base de datos ejecutar la serie de queries del archivo o importar el mismo.
+```bash
+node app/db/0_db_structure.js
+```  
+-Tener en cuenta que si ya existe un base de datos llamada 'delilah_resto' (o cómo la haya renombreado en el paso 4) será eliminada en este paso  
+
+#### 6.1-Comando para agregar usuarios: 
+
+```bash
+node app/db/1_db_admin.js
+```  
+
+#### 6.2-Comando para agregar productos: 
+
+```bash
+node app/db/2_db_products.js
+```  
+
+#### 6.3-Comando para agregar pedidos: 
+
+```bash
+node app/db/3_db_orders.js
+```  
+
+#### 6.4-Comando para agregar datos de los pedidos: 
+
+```bash
+node app/db/4_db_products_orders.js
+```  
 
 ### 7 - Iniciando el servidor
 
