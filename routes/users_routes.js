@@ -16,7 +16,7 @@ module.exports = server => {
         "email": "lsimpson@gmail.com",
         "phone": 15112233,
         "delivery_address": "Avenida Siempreviva 742",
-        "is_admin": "TRUE"
+        "is_admin": "FALSE"
     }
     */
 
@@ -41,7 +41,13 @@ module.exports = server => {
         "phone": 15443322,
         "delivery_address": "Avenida Siempreviva 742"
     }
+
+    {
+    "delivery_address": "Avenida Siempreviva 247"
+    }
+
     */
+   
 
 	/*-----------------DELETE A USER-----------------*/
 	router.delete('/:id', middlewares.authenticateUser, users.deleteOne);

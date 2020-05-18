@@ -10,10 +10,11 @@ module.exports = server => {
 
     /*example of info to send in the body:
     {
-        "product_name": "Pizza grande de muzzarella",
-        "price": 350,
+        "product_name": "Pizza grande especial",
+        "abbreviation": "PizzaEsp",
+        "price": 380,
         "img_url": "https://images.unsplash.com/photo-1545016803-a7e357a737e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-        "description": "Pizza grande de muzzarella de 8 porciones"
+        "description": "Pizza grande especial de 8 porciones"
     }
     */
 
@@ -28,10 +29,11 @@ module.exports = server => {
 
     /*example of info to send in the body:
     {
-        "product_name": "Pizza grande de muzzarella",
-        "price": 400,
+        "product_name": "Pizza grande especial",
+        "abbreviation": "PizzaEsp",
+        "price": 420,
         "img_url": "https://images.unsplash.com/photo-1545016803-a7e357a737e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-        "description": "Pizza grande de muzzarella de 8 porciones"
+        "description": "Pizza grande especial de 8 porciones"
     }
     */
 

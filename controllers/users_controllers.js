@@ -6,14 +6,13 @@ const reqs = require('../config/config');
 /*-----------------ADD A USER-----------------*/
 exports.addOne = (req, res) => {
     let missingInfo = [];
-    req.body.username !== undefined ? '' : missingInfo.push(' username');
-    req.body.password !== undefined ? '' : missingInfo.push(' password');
-    req.body.full_name !== undefined ? '' : missingInfo.push(' full_name');
-    req.body.email !== undefined ? '' : missingInfo.push(' email');
-    req.body.phone !== undefined ? '' : missingInfo.push(' phone');
-    req.body.delivery_address !== undefined ? '' : missingInfo.push(' delivery_address');
-
-    if (missingInfo == '') {
+    const { username = '', password = '', full_name = '', email = '', phone = '', delivery_address = '' } = req.body;
+    Object.values(req.body).forEach(value => {
+        if (!value) {
+            missingInfo.push(value)
+        }
+    })
+    if (!missingInfo.length) {
         function validateEmail(email) {
             let emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return emailregex.test(email);
@@ -158,14 +157,13 @@ exports.addOne = (req, res) => {
 exports.addAdmin = (req, res) => {
     //error message in case of missing required info 422 or 400?
     let missingInfo = [];
-    req.body.username !== undefined ? '' : missingInfo.push(' username');
-    req.body.password !== undefined ? '' : missingInfo.push(' password');
-    req.body.full_name !== undefined ? '' : missingInfo.push(' full_name');
-    req.body.email !== undefined ? '' : missingInfo.push(' email');
-    req.body.phone !== undefined ? '' : missingInfo.push(' phone');
-    req.body.delivery_address !== undefined ? '' : missingInfo.push(' delivery_address');
-
-    if (missingInfo == '') {
+    const { username = '', password = '', full_name = '', email = '', phone = '', delivery_address = '' } = req.body;
+    Object.values(req.body).forEach(value => {
+        if (!value) {
+            missingInfo.push(value)
+        }
+    })
+    if (!missingInfo.length) {
         function validateEmail(email) {
             let emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return emailregex.test(email);
