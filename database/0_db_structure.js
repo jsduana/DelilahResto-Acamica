@@ -17,17 +17,18 @@ let dbsql = [
     `CREATE DATABASE ${db_data.conf_db_name};`,
     `CREATE TABLE ${db_data.conf_db_name}.users (
         user_id INT PRIMARY KEY AUTO_INCREMENT,
-        username VARCHAR (60) NOT NULL,
+        username VARCHAR (60) NOT NULL UNIQUE KEY,
         password VARCHAR (60) NOT NULL,
         full_name VARCHAR(60) NOT NULL,
-        email VARCHAR(60) NOT NULL,
+        email VARCHAR(60) NOT NULL UNIQUE KEY,
         phone INT NOT NULL,
         delivery_address VARCHAR (60) NOT NULL,
         is_admin enum('FALSE','TRUE') NOT NULL DEFAULT 'FALSE'
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`,
     `CREATE TABLE ${db_data.conf_db_name}.products (    
         product_id INT PRIMARY KEY AUTO_INCREMENT,
-        product_name VARCHAR (60) NOT NULL,
+        product_name VARCHAR (60) NOT NULL UNIQUE KEY,
+        abbreviation varchar(8) NOT NULL,
         price FLOAT NOT NULL,
         img_url VARCHAR(200) NOT NULL,
         description VARCHAR(150) NOT NULL

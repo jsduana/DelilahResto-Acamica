@@ -4,13 +4,13 @@ const sequelize = require('../config/db_config');
 /*---------------------------------------------PRODUCTS--------------------------------------------*/
 /*-----------------ADD A PRODUCT-----------------*/
 exports.addOne = (req, res) => {
-    let missingInfo = [];
-    req.body.product_name !== undefined ? '' : missingInfo.push(' product_name');
-    req.body.price !== undefined ? '' : missingInfo.push(' price');
-    req.body.img_url !== undefined ? '' : missingInfo.push(' img_url');
-    req.body.description !== undefined ? '' : missingInfo.push(' description');
-
-    if (missingInfo == '') {
+    const { product_name = '', abbreviation = '', price = '', img_url = '', description = ''  } = req.body;
+    Object.values(req.body).forEach(value => {
+     if(!value) {
+        missingInfo.push(value)
+     }
+    })
+    if(!missingInfo.length) {
         let sql = `SELECT  *
                         FROM products 
                         WHERE product_name = ?`;
@@ -20,12 +20,14 @@ exports.addOne = (req, res) => {
             if (repeated_product.length === 0) {
                 let new_product = {
                     product_name: req.body.product_name,
+                    abbreviation: req.body.abbreviation,
                     price: req.body.price,
                     img_url: req.body.img_url,
                     description: req.body.description
                 };
                 let sql = `INSERT  INTO products 
-                                SET product_name = :product_name, 
+                                SET product_name = :product_name,
+                                    abbreviation = :abbreviation,
                                     price        = :price, 
                                     img_url     = :img_url, 
                                     description = :description`;
@@ -180,12 +182,13 @@ exports.updateOne = (req, res) => {
                 let changed_product = {
                     product_id: current_product[0].product_id,
                     product_name: req.body.product_name !== undefined ? req.body.product_name : current_product[0].product_name,
+                    abbreviation: req.body.abbreviation !== undefined ? req.body.abbreviation : current_product[0].abbreviation,
                     price: req.body.price !== undefined ? req.body.price : current_product[0].price,
                     img_url: req.body.img_url !== undefined ? req.body.img_url : current_product[0].img_url,
                     description: req.body.description !== undefined ? req.body.description : current_product[0].description
                 };
                 let sql = `UPDATE products 
-                SET product_name = :product_name, price = :price, img_url = :img_url, description = :description
+                SET product_name = :product_name, abbreviation = :abbreviation, price = :price, img_url = :img_url, description = :description
                 WHERE product_id = :product_id `;
                 sequelize.query(sql, {
                     replacements: changed_product
@@ -215,7 +218,6 @@ exports.updateOne = (req, res) => {
                     } else {
                         //error handling when there is/are repeated product_name and/or description
                         let product_name = 0;
-                        let description = 0;
                         //checking what is repeated
                         repeated_product.forEach(oneProduct => {
                             if (oneProduct.product_name === req.body.product_name) {
