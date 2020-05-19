@@ -14,7 +14,7 @@ module.exports = server => {
         "abbreviation": "PizzaEsp",
         "price": 380,
         "img_url": "https://images.unsplash.com/photo-1545016803-a7e357a737e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-        "description": "Pizza grande especial de 8 porciones"
+        "product_description": "Pizza grande especial de 8 porciones"
     }
     */
 
@@ -33,7 +33,7 @@ module.exports = server => {
         "abbreviation": "PizzaEsp",
         "price": 420,
         "img_url": "https://images.unsplash.com/photo-1545016803-a7e357a737e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-        "description": "Pizza grande especial de 8 porciones"
+        "product_description": "Pizza grande especial de 8 porciones"
     }
     */
 

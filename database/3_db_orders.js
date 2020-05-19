@@ -9,7 +9,7 @@ let dbsql = [
     //`TRUNCATE TABLE ${db_data.conf_db_name}.orders;`,
     //`SET FOREIGN_KEY_CHECKS = 1;`,
     `INSERT INTO ${db_data.conf_db_name}.orders 
-        (order_id, status, date, description, payment_method, total, user_id) VALUES
+        (order_id, status, date, order_description, payment_method, total, user_id) VALUES
         (NULL, 'delivered', NOW(), '1xHamVegg 1xAgua', 'cash', 360, 1),
         (NULL, 'canceled', NOW(), '1xTacCarn', 'debit card', 230, 2),
         (NULL, 'sending', NOW(), '3xHamDob 2xCervLat 1xAgua', 'cash', 1350, 3),
