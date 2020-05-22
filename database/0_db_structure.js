@@ -31,13 +31,13 @@ let dbsql = [
         abbreviation varchar(8) NOT NULL,
         price FLOAT NOT NULL,
         img_url VARCHAR(200) NOT NULL,
-        description VARCHAR(150) NOT NULL
+        product_description VARCHAR(150) NOT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;`,
     `CREATE TABLE ${db_data.conf_db_name}.orders (    
         order_id INT PRIMARY KEY AUTO_INCREMENT,
         status enum('new','confirmed','preparing','sending','delivered','canceled') NOT NULL DEFAULT 'new',
         date DATETIME NOT NULL,
-        description VARCHAR(150) NOT NULL,
+        order_description VARCHAR(150) NOT NULL,
         payment_method enum('cash','credit card','debit card') NOT NULL,
         total FLOAT NOT NULL,
         user_id INT,

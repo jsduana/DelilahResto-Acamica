@@ -9,7 +9,7 @@ let dbsql = [
     //`TRUNCATE TABLE ${db_data.conf_db_name}.products;`,
     //`SET FOREIGN_KEY_CHECKS = 1;`,
     `INSERT INTO ${db_data.conf_db_name}.products
-        (product_id, product_name, abbreviation, price, img_url, description) VALUES      
+        (product_id, product_name, abbreviation, price, img_url, product_description) VALUES      
         (NULL, 'Hamburguesa Veggie', 'HamVegg', 300, 'https://images.unsplash.com/photo-1540265556701-ae209ac395cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60','Hamburguesa vegetariana con queso, lechuga y tomate'),
         (NULL, 'Hamburguesa Doble con Cheddar', 'HamDob', 370, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60', 'Dos medallones de carne con cheddar y bacon entre 2 panes Brioche'),
         (NULL, 'Hamburguesa Clásica', 'HamClas', 310, 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60','Un medallon de carne con cheddar entre 2 panes Brioche'),
