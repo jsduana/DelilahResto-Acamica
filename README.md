@@ -11,9 +11,22 @@ El objetivo del trabajo es generar el backend de una app de pedidos de comida ll
 - Funciones CRUD de órdenes
 
 ## Tabla de contenidos
-* [Recursos y tecnologías utilizadas](recursos-y-tecnologías-utilizadas)
+* [Recursos y tecnologías utilizadas](#recursos-y-tecnologías-utilizadas)
 * [Instalación](#instalación)
-
+    * [1 - Clonar proyecto](#1--clonar-proyecto)
+    * [2- Node.js](#2--nodejs)
+    * [3- Instalación de paquetes](#3--instalación-de-paquetes)
+    * [4- XAMPP](#4--xampp)
+    * [5- Configuración datos de conexión con la base de datos](#5--configuración-datos-de-conexión-con-la-base-de-datos)
+    * [6- Instalación de base de datos](#6--instalación-de-base-de-datos)
+        * [6.0-Comando para crear la estructura de la base de datos y tablas](#60-comando-para-crear-la-estructura-de-la-base-de-datos-y-tablas)
+        * [6.1-Comando para agregar usuarios](#61-comando-para-agregar-usuarios)
+        * [6.2-Comando para agregar productos](#62-comando-para-agregar-productos)
+        * [6.3-Comando para agregar pedidos](#63-comando-para-agregar-pedidos)
+        * [6.4-Comando para agregar datos de los pedidos](#64-comando-para-agregar-datos-de-los-pedidos)
+    * [7- Iniciando el servidor](#7--iniciando-el-servidor)
+* [Documentación API](#documentación-API)
+    
 
 ## Recursos y tecnologías utilizadas
 - Node.js
@@ -35,7 +48,7 @@ Desde la consola con el siguiente link:
 ### 2- Node.js
 Este proyecto trabaja con Node.js, por ende, de no tenerlo instalado se lo debe instalar para el funcionamiento del proyecto. Se lo puede descargar e instalar en [https://nodejs.org/es/download/](https://nodejs.org/es/download/).  
 
-### 3- Instalación de paquetes:
+### 3- Instalación de paquetes
 Las dependencias se instalan con el siguiente comando:
  
 ```bash
@@ -44,12 +57,12 @@ npm install
   
 -Asegurarse que todos los comandos sean hechos con la carpeta raíz del proyecto como current directory 
 
-### 4- XAMPP:
+### 4- XAMPP
 El proyecto también requiere tener instalado XAMPP o algún otro sistema de gestión de base de datos MySQL. Se lo puede descargar e instalar en [https://www.apachefriends.org/es/index.html](https://www.apachefriends.org/es/index.html).  
 
 En XAMPP se debe tener activado los módulos Apache y MySQL para poder realizar operaciones con la base de datos. De tener otro sistema realizar una acción equivalente.  
   
-### 5- Configuración datos de conexión con la base de datos:  
+### 5- Configuración datos de conexión con la base de datos  
 Entrando al archivo **db_connection_data.js** dentro de **database** se pueden observar las siguientes variables para la configuración de la conexión:
 
 
@@ -62,7 +75,7 @@ conf_port     : '3306',           // port number
 
 Los valores de estas variables pueden ser modificados de ser necesario.
 
-### 6- Instalación de base de datos:  
+### 6- Instalación de base de datos
 #### 6.0-Comando para crear la estructura de la base de datos y tablas: 
 
 ```bash
@@ -94,8 +107,11 @@ node app/db/3_db_orders.js
 node app/db/4_db_products_orders.js
 ```  
 
-### 7 - Iniciando el servidor
+### 7- Iniciando el servidor
 
 Abrir el archivo en `/server/server.js` desde node
 
 `node server`
+
+## Documentación API
+Para ver más información, puede referirse a la [documentación de la API](https://app.swaggerhub.com/apis/jsduana/Delilah_Resto/1.0.0#/) o abrir el archivo **spec.yaml** del repositorio
